@@ -21,7 +21,7 @@ export default function ServicesPage() {
         lede="Fewer vendors, cleaner accountability, better outcomes. Every service line below is delivered by dedicated teams under one roof. Start with one, or combine them as you grow."
       />
 
-      <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20" aria-label="All services">
+      <section className="mx-auto max-w-7xl px-5 py-12 sm:px-8 sm:py-16" aria-label="All services">
         <ul className="space-y-5">
           {services.map((s, i) => (
             <Reveal as="li" key={s.slug} delay={Math.min(i, 2) * 60}>

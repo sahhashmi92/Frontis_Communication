@@ -23,7 +23,7 @@ export default function CtaBand({
   secondaryHref?: string;
 }) {
   return (
-    <section className="mx-auto max-w-7xl px-5 pb-20 sm:px-8 sm:pb-24">
+    <section className="mx-auto max-w-7xl px-5 pb-14 sm:px-8 sm:pb-16">
       <Reveal>
         <div className="relative overflow-hidden rounded-[2rem] bg-navy px-6 py-14 sm:px-12 sm:py-16 lg:px-16">
           {/* Logo-derived ornament */}

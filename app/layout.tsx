@@ -1,30 +1,23 @@
 import type { Metadata, Viewport } from "next";
-import { Poppins } from "next/font/google";
+import type { ReactNode } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-poppins",
-  display: "swap",
-});
-
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Frontis Tech | Operations & Technology Partner",
-    template: "%s | Frontis Tech",
+    default: "Frontis Communications | Communications Partner",
+    template: "%s | Frontis Communications",
   },
   description:
-    "Frontis Tech LLC is a full-service operations and technology partner: customer acquisition, back-office support, talent solutions, performance marketing, and software development. Connections That Convert.",
+    "Frontis Communications is a full-service communications and support partner: customer acquisition, back-office support, talent solutions, performance marketing, and software development.",
   openGraph: {
     siteName: site.shortName,
     type: "website",
     url: site.url,
-    images: [{ url: "/brand/og.png", width: 1200, height: 630, alt: "Frontis Tech: Connections That Convert" }],
+    images: [{ url: "/brand/og.png", width: 1200, height: 630, alt: "Frontis Communications" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -35,9 +28,9 @@ export const viewport: Viewport = {
   themeColor: "#0f2660",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={`${poppins.variable} h-full`}>
+    <html lang="en" className="h-full">
       <body className="flex min-h-full flex-col bg-white font-sans text-ink antialiased">
         <Header />
         <main id="main" className="flex-1">

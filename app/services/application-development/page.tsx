@@ -150,7 +150,7 @@ export default function ApplicationDevelopmentPage() {
       <Section aria-labelledby="why-us">
         <Reveal>
           <SectionHeading
-            eyebrow="Why Frontis Tech"
+            eyebrow="Why Frontis Communications"
             title={<span id="why-us">A build partner, not a bet</span>}
           />
         </Reveal>

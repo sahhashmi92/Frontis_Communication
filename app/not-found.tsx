@@ -3,7 +3,7 @@ import Button from "@/components/Button";
 
 export default function NotFound() {
   return (
-    <section className="mx-auto flex max-w-7xl flex-col items-start px-5 py-24 sm:px-8 sm:py-32">
+    <section className="mx-auto flex max-w-7xl flex-col items-start px-5 py-20 sm:px-8 sm:py-24">
       <p className="mb-3 flex items-center gap-2.5 text-[0.8125rem] font-semibold tracking-[0.14em] text-navy-500 uppercase">
         <span className="h-2 w-2 rounded-full bg-orange" aria-hidden="true" />
         404

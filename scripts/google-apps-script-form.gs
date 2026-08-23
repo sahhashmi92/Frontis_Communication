@@ -1,6 +1,6 @@
 /**
- * Frontis Tech website contact form backend.
- * Receives POSTs from frontistech.com/contact, appends each submission to the
+ * Frontis Communications website contact form backend.
+ * Receives POSTs from frontiscommunications.com/contact, appends each submission to the
  * attached Google Sheet, and emails an alert to the sheet owner.
  *
  * Setup (one time):
@@ -45,7 +45,7 @@ function doPost(e) {
       replyTo: p.email || to,
       subject: "New website inquiry: " + (p.name || "Unknown") + " (" + (p.service || "General") + ")",
       body:
-        "New submission from frontistech.com\n\n" +
+        "New submission from frontiscommunications.com\n\n" +
         "Name: " + (p.name || "") + "\n" +
         "Company: " + (p.company || "") + "\n" +
         "Email: " + (p.email || "") + "\n" +

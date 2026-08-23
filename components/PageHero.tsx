@@ -27,7 +27,7 @@ export default function PageHero({
           <div className="h-14 w-14 rounded-full bg-orange/80" />
         </div>
       </div>
-      <div className="relative mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:py-24">
+      <div className="relative mx-auto max-w-7xl px-5 py-12 sm:px-8 sm:py-14 lg:py-16">
         <p className="mb-3 flex items-center gap-2.5 text-[0.8125rem] font-semibold tracking-[0.14em] text-navy-500 uppercase">
           <span className="h-2 w-2 shrink-0 rounded-full bg-orange" aria-hidden="true" />
           {eyebrow}

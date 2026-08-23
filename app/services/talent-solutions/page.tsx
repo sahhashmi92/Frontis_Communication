@@ -179,7 +179,7 @@ export default function TalentSolutionsPage() {
       <Section tint aria-labelledby="why-us">
         <Reveal>
           <SectionHeading
-            eyebrow="Why Frontis Tech"
+            eyebrow="Why Frontis Communications"
             title={<span id="why-us">Staffing you don’t have to babysit</span>}
           />
         </Reveal>

@@ -1,9 +1,9 @@
-# Frontis Tech — frontistech.com
+# Frontis Communications — frontiscommunications.com
 
-Marketing website for **Frontis Tech LLC** · _Connections That Convert_
+Marketing website for **Frontis Communications** · _Communication That Connects_
 
-Built with Next.js (App Router) + Tailwind CSS v4, Poppins via `next/font`.
-All 11 launch pages are fully static — no server runtime needed.
+Next.js (App Router) + Tailwind CSS v4, Poppins via `next/font`.
+All 14 pages are statically prerendered — no server runtime required.
 
 ## Commands
 
@@ -13,49 +13,64 @@ npm run dev       # local development → http://localhost:3000
 npm run build     # production build (all routes prerendered static)
 npm run start     # serve the production build
 npx eslint app components lib   # lint
+node scripts/process-assets.mjs # regenerate brand assets from assets/logo-horizontal.png
 ```
 
 ## Structure
 
 | Path | What it is |
 | --- | --- |
-| `app/` | One folder per page (11 launch pages + 404, sitemap, robots) |
-| `components/` | Header (dropdown + mobile menu), Footer, CtaBand, PageHero, Reveal, icons, blocks |
-| `lib/site.ts` | **Single source of truth**: company info, email, service + industry data, form endpoint |
-| `public/brand/` | Web-optimized logo exports (trimmed from `/Images` originals) |
-| `scripts/process-assets.mjs` | Regenerates `public/brand` + favicons from the original logo files |
+| `app/` | One folder per page (14 routes + 404, sitemap, robots) |
+| `components/` | Header (2-col services dropdown + mobile menu), Footer, CtaBand, PageHero, RelatedServices, Reveal, icons, blocks |
+| `lib/site.ts` | **Single source of truth**: company details, phone, emails, the eight service lines, industries, form endpoint |
+| `assets/` | Master brand artwork (not served to the browser) |
+| `public/brand/` | Generated, web-optimized brand assets |
+| `scripts/process-assets.mjs` | Rebuilds `public/brand` + favicons from the master logo |
 
-## Contact form backend (already connected)
+## Pages
 
-Submissions post to a Google Apps Script web app bound to the
-**"Frontis Tech Website Leads"** Google Sheet. Each submission appends a row to
-the "Leads" tab and sends an email alert to the recipient configured as
-`NOTIFY_EMAIL` in the script. The script source is versioned at
+Home · About · Careers · Services hub · Industries · Contact
+Services: Customer Acquisition · Back-Office Support · Talent Solutions ·
+Performance Marketing · Digital Innovation & Software Development ·
+AI & Automation · Application Development · Cloud Management & Migration
+
+## Brand assets
+
+`assets/logo-horizontal.png` is the master (transparent, tightly cropped).
+Running `node scripts/process-assets.mjs` regenerates everything derived from it:
+
+- `public/brand/logo-horizontal.png` — header and footer wordmark
+- `public/brand/mark.png` — symbol only, used in the homepage hero tile
+- `public/brand/og.png` — 1200×630 social share card with the tagline
+- `app/icon.png`, `app/apple-icon.png` — favicons
+
+Replace the master file and re-run the script to roll out a new logo everywhere.
+
+## Contact form
+
+Submissions post to a Google Apps Script web app bound to a Google Sheet. Each
+submission appends a row and emails an alert to the address set as
+`NOTIFY_EMAIL` in the script. Source is versioned at
 `scripts/google-apps-script-form.gs`; the live copy is managed from the sheet
-via Extensions > Apps Script (project "Frontis Tech Form Backend").
+via Extensions → Apps Script.
 
-- Change the alert recipient: edit `NOTIFY_EMAIL` in the Apps Script and
-  Deploy > Manage deployments > edit > New version.
-- Switch backends (e.g. Formspree): set `NEXT_PUBLIC_FORM_ENDPOINT` in Vercel;
-  it overrides the built-in default in `lib/site.ts`.
+To point the form at a different backend, set `NEXT_PUBLIC_FORM_ENDPOINT` in
+Vercel — it overrides the default in `lib/site.ts`.
 
-## Deployment (per brief)
+## Deployment
 
-1. Push this folder to a Git repo → import into Vercel (defaults are fine).
-2. Point `frontistech.com` at Vercel; manage DNS (and email MX) in Cloudflare.
-   SSL is automatic on Vercel.
-3. Verify the site in Google Search Console **before launch** and submit
-   `https://frontistech.com/sitemap.xml` on launch day.
+Pushes to `main` deploy automatically to Vercel. Attach `frontiscommunications.com`
+in Vercel → Settings → Domains, then verify the site in Google Search Console and
+submit `https://frontiscommunications.com/sitemap.xml`.
 
-## Content placeholders awaiting real data
+## Awaiting real content
 
-- **Phone number** — brief says a US (Texas area code) number is coming; add it in `components/Footer.tsx` and `app/contact/page.tsx` when available.
-- **Mailing address** — add once the virtual office is established.
-- **ISO 27001 / SOC 2** — listed as "in progress" on the Compliance page. Update only when certified.
-- **Phase 2 pages** (Case Studies, Careers, Blog) — intentionally not built; add them when real content exists.
+- **Mailing address** — not yet published anywhere on the site.
+- **Named open roles** — the Careers page describes hiring areas and the process; add specific postings when roles open.
+- **Case studies / blog** — not built; add when real content exists.
 
-## SEO already in place
+## SEO in place
 
-Unique title/description per page · one H1 per page · alt text on all images ·
+Unique title and description per page · one H1 per page · alt text on every image ·
 Organization schema (home) · Service schema (each service page) ·
-`sitemap.xml` + `robots.txt` · OG image (`public/brand/og.png`).
+`sitemap.xml` + `robots.txt` · OG image.

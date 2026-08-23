@@ -1,12 +1,14 @@
 export const site = {
-  name: "Frontis Tech LLC",
-  shortName: "Frontis Tech",
-  tagline: "Connections That Convert",
-  url: "https://frontistech.com",
-  email: "contact@frontistech.com",
+  name: "Frontis Communications",
+  shortName: "Frontis Communications",
+  tagline: "Communication That Connects",
+  url: "https://frontiscommunications.com",
+  phone: "0313-9331429",
+  email: "info@frontiscommunications.com",
+  careersEmail: "hr@frontiscommunications.com",
   /**
    * Contact form backend: Google Apps Script web app bound to the
-   * "Frontis Tech Website Leads" sheet. Each submission appends a row and
+   * "Frontis Communications Website Leads" sheet. Each submission appends a row and
    * emails an alert (see scripts/google-apps-script-form.gs). Override with
    * NEXT_PUBLIC_FORM_ENDPOINT to point at a different backend.
    */
@@ -35,7 +37,7 @@ export const services: ServiceInfo[] = [
     short: "Customer Acquisition",
     blurb: "Outbound, inbound, and live transfers that turn prospects into customers.",
     summary:
-      "Outbound and inbound calling, live transfers, lead qualification, appointment setting, and retention, managed as compliance-first campaigns. Built for regulated industries where every call has to stand up to scrutiny.",
+      "Outbound and inbound calling, live transfers, lead qualification, appointment setting, and retention, managed as structured, high-quality campaigns.",
     icon: "acquisition",
   },
   {

@@ -1,7 +1,12 @@
 /**
- * One-time brand asset pipeline.
- * Trims the transparent padding from the supplied 2000x2000 logo exports,
- * emits web-ready PNGs into public/brand, and generates favicon + OG images.
+ * Brand asset pipeline for Frontis Communications.
+ *
+ * Source of truth: assets/logo-horizontal.png (transparent, tightly cropped).
+ * Regenerates every derived asset the site serves:
+ *   public/brand/logo-horizontal.png  navbar + footer wordmark
+ *   public/brand/mark.png             symbol only (hero tile)
+ *   public/brand/og.png               1200x630 social share card
+ *   app/icon.png, app/apple-icon.png  favicons
  *
  * Run: node scripts/process-assets.mjs
  */
@@ -9,59 +14,77 @@ import sharp from "sharp";
 import { mkdir } from "node:fs/promises";
 import path from "node:path";
 
-const SRC = "/Users/mac/Desktop/Front/Images";
+const SRC = path.resolve("assets/logo-horizontal.png");
 const OUT = path.resolve("public/brand");
 const APP = path.resolve("app");
 
+/** Symbol/wordmark boundary in the source, measured from alpha columns. */
+const SYMBOL_WIDTH = 274;
+
+const NAVY = "#0f2660";
+const SURFACE = "#f5f7fa";
+
 await mkdir(OUT, { recursive: true });
 
-async function trimmed(file) {
-  return sharp(path.join(SRC, file)).trim({ threshold: 10 });
+async function report(file) {
+  const m = await sharp(file).metadata();
+  console.log(`${path.relative(process.cwd(), file)}  ${m.width}x${m.height}`);
 }
 
-async function emit(file, name, height) {
-  const img = await trimmed(file);
-  const resized = img.resize({ height, withoutEnlargement: true });
-  await resized.png({ compressionLevel: 9 }).toFile(path.join(OUT, `${name}.png`));
-  const meta = await sharp(path.join(OUT, `${name}.png`)).metadata();
-  console.log(`${name}.png ${meta.width}x${meta.height}`);
-}
+// ---- Horizontal wordmark (canonical, served to the browser) ----
+const wordmark = path.join(OUT, "logo-horizontal.png");
+await sharp(SRC).trim({ threshold: 10 }).png({ compressionLevel: 9 }).toFile(wordmark);
+await report(wordmark);
 
-// Navbar / footer wordmarks (2x for retina at display size)
-await emit("FrontisT_horizental.png", "logo-horizontal", 96);
-await emit("FrontisT_stacked.png", "logo-stacked", 400);
-await emit("favicon.png", "mark", 256);
+// ---- Symbol only ----
+const meta = await sharp(SRC).metadata();
+const symbolBuf = await sharp(SRC)
+  .extract({ left: 0, top: 0, width: SYMBOL_WIDTH, height: meta.height })
+  .trim({ threshold: 10 })
+  .png()
+  .toBuffer();
+const mark = path.join(OUT, "mark.png");
+await sharp(symbolBuf).png({ compressionLevel: 9 }).toFile(mark);
+await report(mark);
 
-// Favicons — the mark centered on transparent, square canvas
+// ---- Favicons: symbol centred on a square transparent canvas ----
 async function icon(size, dest) {
-  const buf = await (await trimmed("favicon.png"))
-    .resize(Math.round(size * 0.86), Math.round(size * 0.86), {
-      fit: "contain",
-      background: { r: 0, g: 0, b: 0, alpha: 0 },
-    })
+  const inner = Math.round(size * 0.82);
+  const buf = await sharp(symbolBuf)
+    .resize(inner, inner, { fit: "inside", background: { r: 0, g: 0, b: 0, alpha: 0 } })
     .png()
     .toBuffer();
   await sharp({
     create: { width: size, height: size, channels: 4, background: { r: 0, g: 0, b: 0, alpha: 0 } },
   })
     .composite([{ input: buf, gravity: "centre" }])
-    .png()
+    .png({ compressionLevel: 9 })
     .toFile(dest);
-  console.log(`icon ${size} -> ${dest}`);
+  await report(dest);
 }
-
 await icon(512, path.join(APP, "icon.png"));
 await icon(180, path.join(APP, "apple-icon.png"));
 
-// OG image: stacked logo centered on white, 1200x630
-const stacked = await (await trimmed("FrontisT_stacked.png"))
-  .resize(null, 380, { fit: "inside" })
-  .png()
-  .toBuffer();
-await sharp({
-  create: { width: 1200, height: 630, channels: 4, background: "#ffffff" },
-})
-  .composite([{ input: stacked, gravity: "centre" }])
-  .png()
-  .toFile(path.join(OUT, "og.png"));
-console.log("og.png 1200x630");
+// ---- Open Graph card: logo + tagline on brand surface ----
+const OG_W = 1200;
+const OG_H = 630;
+const logoOnCard = await sharp(SRC).trim({ threshold: 10 }).resize({ width: 840 }).png().toBuffer();
+const tagline = Buffer.from(
+  `<svg width="${OG_W}" height="${OG_H}" xmlns="http://www.w3.org/2000/svg">
+     <text x="${OG_W / 2}" y="378" text-anchor="middle"
+           font-family="Poppins, Avenir Next, Segoe UI, Helvetica, Arial, sans-serif"
+           font-size="34" font-weight="600" letter-spacing="0.02em" fill="${NAVY}">
+       Communication That Connects
+     </text>
+     <rect x="${OG_W / 2 - 44}" y="412" width="88" height="4" rx="2" fill="#ff751f"/>
+   </svg>`,
+);
+const og = path.join(OUT, "og.png");
+await sharp({ create: { width: OG_W, height: OG_H, channels: 4, background: SURFACE } })
+  .composite([
+    { input: logoOnCard, top: 210, left: Math.round((OG_W - 840) / 2) },
+    { input: tagline, top: 0, left: 0 },
+  ])
+  .png({ compressionLevel: 9 })
+  .toFile(og);
+await report(og);

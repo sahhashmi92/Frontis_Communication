@@ -7,7 +7,7 @@ import ContactForm from "./ContactForm";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Tell us what you need: customer acquisition, back-office support, talent, marketing, or software. We respond to all inquiries within one US business day.",
+    "Reach Frontis Communications by phone or email for general inquiries and careers.",
 };
 
 export default function ContactPage() {
@@ -16,10 +16,10 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact us"
         title="Tell us what you need"
-        lede="We will get back to you within one business day."
+        lede="Call, email, or send a message and we’ll route it to the right team."
       />
 
-      <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20" aria-label="Contact">
+      <section className="mx-auto max-w-7xl px-5 py-12 sm:px-8 sm:py-16" aria-label="Contact">
         <div className="grid gap-10 lg:grid-cols-[1.5fr_1fr] lg:gap-16">
           <Reveal>
             <ContactForm />
@@ -30,12 +30,22 @@ export default function ContactPage() {
               <dl className="space-y-7">
                 <div>
                   <dt className="text-[0.8125rem] font-semibold tracking-[0.14em] text-navy-500 uppercase">
-                    Email us directly
+                    Phone
                   </dt>
                   <dd className="mt-2">
+                    <a href={`tel:${site.phone}`} className="text-lg font-semibold text-navy underline-offset-4 hover:underline">
+                      {site.phone}
+                    </a>
+                  </dd>
+                </div>
+                <div className="border-t border-line pt-7">
+                  <dt className="text-[0.8125rem] font-semibold tracking-[0.14em] text-navy-500 uppercase">
+                    General enquiries
+                  </dt>
+                  <dd className="mt-2 leading-relaxed text-muted">
                     <a
                       href={`mailto:${site.email}`}
-                      className="text-lg font-semibold break-all text-navy underline-offset-4 hover:underline"
+                      className="font-medium text-navy underline-offset-4 hover:underline"
                     >
                       {site.email}
                     </a>
@@ -43,20 +53,15 @@ export default function ContactPage() {
                 </div>
                 <div className="border-t border-line pt-7">
                   <dt className="text-[0.8125rem] font-semibold tracking-[0.14em] text-navy-500 uppercase">
-                    Response commitment
+                    Careers
                   </dt>
                   <dd className="mt-2 leading-relaxed text-muted">
-                    Every inquiry gets a reply within one US business day, usually
-                    sooner.
-                  </dd>
-                </div>
-                <div className="border-t border-line pt-7">
-                  <dt className="text-[0.8125rem] font-semibold tracking-[0.14em] text-navy-500 uppercase">
-                    Not sure what you need?
-                  </dt>
-                  <dd className="mt-2 leading-relaxed text-muted">
-                    Pick “Not sure / General inquiry” in the form. Describing the
-                    problem is enough. We’ll help you map it to the right service.
+                    <a
+                      href={`mailto:${site.careersEmail}`}
+                      className="font-medium text-navy underline-offset-4 hover:underline"
+                    >
+                      {site.careersEmail}
+                    </a>
                   </dd>
                 </div>
               </dl>

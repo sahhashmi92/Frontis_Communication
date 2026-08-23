@@ -88,7 +88,7 @@ export function Section({
       className={tint ? `border-y border-line bg-surface ${className}` : className}
       {...rest}
     >
-      <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20">{children}</div>
+      <div className="mx-auto max-w-7xl px-5 py-12 sm:px-8 sm:py-16">{children}</div>
     </section>
   );
 }

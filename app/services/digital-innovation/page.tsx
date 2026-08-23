@@ -82,7 +82,7 @@ export default function DigitalInnovationPage() {
       <PageHero
         eyebrow="Digital Innovation & Software Development"
         title="Ideas become working software"
-        lede="The technology build arm of Frontis Tech: custom systems built around the way your business actually operates, delivered through a structured process rather than freelance guesswork."
+        lede="The technology build arm of Frontis Communications: custom systems built around the way your business actually operates, delivered through a structured process rather than freelance guesswork."
       />
 
       <Section aria-labelledby="capabilities">

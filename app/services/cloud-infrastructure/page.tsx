@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import CtaBand from "@/components/CtaBand";
 import PageHero from "@/components/PageHero";
 import RelatedServices from "@/components/RelatedServices";
@@ -85,7 +84,7 @@ const whyPoints: { icon: IconName; title: string; body: string }[] = [
   {
     icon: "shieldCheck",
     title: "Security and access done properly",
-    body: "Least-privilege access, encryption, and audit logging as the default, which regulated-industry clients expect.",
+    body: "Least-privilege access, encryption, and audit logging as the default.",
   },
   {
     icon: "dollar",
@@ -162,7 +161,7 @@ export default function CloudInfrastructurePage() {
       <Section aria-labelledby="why-us">
         <Reveal>
           <SectionHeading
-            eyebrow="Why Frontis Tech"
+            eyebrow="Why Frontis Communications"
             title={<span id="why-us">Infrastructure you stop thinking about</span>}
           />
         </Reveal>
@@ -189,18 +188,7 @@ export default function CloudInfrastructurePage() {
             <SectionHeading
               eyebrow="Who it’s for"
               title={<span id="who-for">For businesses that have outgrown their setup, or their patience with it</span>}
-              lede={
-                <>
-                  See how we handle data and access on our{" "}
-                  <Link
-                    href="/compliance"
-                    className="font-medium text-navy-500 underline underline-offset-4 hover:text-navy"
-                  >
-                    Compliance &amp; Security page
-                  </Link>
-                  .
-                </>
-              }
+              lede="See how we handle data, access, and operational support through a structured delivery model."
             />
           </Reveal>
           <Reveal delay={100}>

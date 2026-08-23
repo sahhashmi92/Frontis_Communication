@@ -5,7 +5,7 @@ import { services, site } from "@/lib/site";
 const companyLinks = [
   { href: "/about", label: "About Us" },
   { href: "/industries", label: "Industries We Serve" },
-  { href: "/compliance", label: "Compliance & Security" },
+  { href: "/careers", label: "Careers" },
   { href: "/contact", label: "Contact Us" },
 ];
 
@@ -15,12 +15,12 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-5 pt-14 pb-8 sm:px-8">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.1fr]">
           <div>
-            <Link href="/" aria-label="Frontis Tech home">
+            <Link href="/" aria-label="Frontis Communications home">
               <Image
                 src="/brand/logo-horizontal.png"
-                alt="Frontis Tech"
-                width={573}
-                height={96}
+                alt="Frontis Communications"
+                width={1943}
+                height={226}
                 className="h-8 w-auto"
               />
             </Link>
@@ -29,8 +29,8 @@ export default function Footer() {
               {site.tagline}
             </p>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted">
-              A full-service operations and technology partner for growth-focused
-              businesses across the United States.
+              Communication, support, and delivery services for growth-focused
+              businesses.
             </p>
           </div>
 
@@ -79,13 +79,28 @@ export default function Footer() {
             <ul className="mt-4 space-y-2.5 text-sm text-muted">
               <li>
                 <a
+                  href={`tel:${site.phone}`}
+                  className="font-medium text-navy-500 transition-colors hover:text-navy"
+                >
+                  {site.phone}
+                </a>
+              </li>
+              <li>
+                <a
                   href={`mailto:${site.email}`}
                   className="font-medium text-navy-500 transition-colors hover:text-navy"
                 >
                   {site.email}
                 </a>
               </li>
-              <li>We respond to all inquiries within one US business day.</li>
+              <li>
+                <a
+                  href={`mailto:${site.careersEmail}`}
+                  className="font-medium text-navy-500 transition-colors hover:text-navy"
+                >
+                  {site.careersEmail}
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -94,7 +109,7 @@ export default function Footer() {
           <p>
             © {new Date().getFullYear()} {site.name}. All rights reserved.
           </p>
-          <p>{site.name} · Registered in Texas, USA</p>
+          <p>{site.phone} · {site.email}</p>
         </div>
       </div>
     </footer>

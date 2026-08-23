@@ -90,7 +90,7 @@ const whyPoints: { icon: IconName; title: string; body: string }[] = [
   {
     icon: "shieldCheck",
     title: "Compliance-aware by design",
-    body: "Consent, data handling, and audit trails are designed in, which matters in regulated industries.",
+    body: "Consent, data handling, and audit trails are designed in so the system stays dependable.",
   },
   {
     icon: "network",
@@ -162,7 +162,7 @@ export default function AiAutomationPage() {
       <Section aria-labelledby="why-us">
         <Reveal>
           <SectionHeading
-            eyebrow="Why Frontis Tech"
+            eyebrow="Why Frontis Communications"
             title={<span id="why-us">AI that ships and stays useful</span>}
           />
         </Reveal>

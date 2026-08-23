@@ -11,7 +11,7 @@ import { Icon, type IconName } from "@/components/icons";
 export const metadata: Metadata = {
   title: "Customer Acquisition & Contact Center Operations",
   description:
-    "Scalable, compliant customer acquisition: live transfers, outbound prospecting, inbound support, and appointment setting, built for regulated industries.",
+    "Scalable customer acquisition: live transfers, outbound prospecting, inbound support, and appointment setting.",
 };
 
 const whatWeDo = [
@@ -34,7 +34,7 @@ const useCases: { icon: IconName; vertical: string; body: string }[] = [
   {
     icon: "health",
     vertical: "Health Insurance",
-    body: "ACA and Medicare live transfers, delivered with CMS-aware scripting and enrollment-period discipline.",
+    body: "High-volume transfer support and lead qualification during enrollment periods.",
   },
   {
     icon: "solar",
@@ -58,16 +58,16 @@ const useCases: { icon: IconName; vertical: string; body: string }[] = [
   },
 ];
 
-const complianceItems: { icon: IconName; title: string; body: string }[] = [
+const qualityItems: { icon: IconName; title: string; body: string }[] = [
   {
     icon: "shieldCheck",
-    title: "TCPA-conscious dialing",
-    body: "Dialing practices designed around TCPA requirements from day one.",
+    title: "Reliable dialing operations",
+    body: "Dialing practices built to keep campaigns moving consistently.",
   },
   {
     icon: "clipboardCheck",
-    title: "DNC scrubbing & list hygiene",
-    body: "Lists scrubbed against Do-Not-Call registries before a single dial is made.",
+    title: "Clean lists",
+    body: "Lists are checked and maintained before a single dial is made.",
   },
   {
     icon: "mic",
@@ -81,15 +81,15 @@ const complianceItems: { icon: IconName; title: string; body: string }[] = [
   },
   {
     icon: "bookOpen",
-    title: "CMS-aware scripting",
-    body: "Healthcare campaign scripts built with CMS marketing guidelines in view.",
+    title: "Campaign scripting",
+    body: "Scripts are built around the offer, audience, and workflow you need.",
   },
 ];
 
 const steps = [
   {
     title: "Define requirements",
-    body: "We document your target profile, offer, volumes, and compliance requirements together.",
+    body: "We document your target profile, offer, volumes, and campaign requirements together.",
   },
   {
     title: "Build & train your team",
@@ -110,14 +110,14 @@ export default function CustomerAcquisitionPage() {
     <>
       <ServiceSchema
         name="Customer Acquisition & Contact Center Operations"
-        description="Outbound and inbound calling, live transfers, lead qualification, appointment setting, retention, and compliance-first campaign management."
+        description="Outbound and inbound calling, live transfers, lead qualification, appointment setting, and retention."
         slug="customer-acquisition"
       />
 
       <PageHero
         eyebrow="Customer Acquisition & Contact Center Operations"
         title="Turn prospects into customers at scale"
-        lede="Scalable, compliant, performance-focused customer acquisition: outbound, inbound, and live transfers, run by dedicated teams with QA and reporting active from the first call."
+        lede="Scalable, performance-focused customer acquisition: outbound, inbound, and live transfers, run by dedicated teams with QA and reporting active from the first call."
       />
 
       <Section aria-labelledby="what-we-do">
@@ -154,18 +154,18 @@ export default function CustomerAcquisitionPage() {
         </ul>
       </Section>
 
-      {/* Compliance callout, treated as a feature */}
-      <Section aria-labelledby="compliance-callout">
+      {/* Quality callout */}
+      <Section aria-labelledby="quality-callout">
         <Reveal>
           <div className="overflow-hidden rounded-[2rem] bg-navy px-6 py-12 sm:px-12 sm:py-14">
             <SectionHeading
               dark
-              eyebrow="Compliance, engineered in"
-              title={<span id="compliance-callout">Built for regulated industries</span>}
-              lede="Calling campaigns in insurance and healthcare live or die on compliance. Ours is structural, engineered into dialing, scripting, and staffing rather than promised after the fact."
+              eyebrow="Quality, engineered in"
+              title={<span id="quality-callout">Built for reliable delivery</span>}
+              lede="The process is structured so teams can keep pace, stay aligned, and deliver consistently from the first call."
             />
             <ul className="mt-10 grid gap-x-8 gap-y-7 sm:grid-cols-2 lg:grid-cols-3">
-              {complianceItems.map((c) => (
+              {qualityItems.map((c) => (
                 <li key={c.title} className="flex items-start gap-4">
                   <span className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10 text-orange-400">
                     <Icon name={c.icon} className="h-5 w-5" />
@@ -177,15 +177,6 @@ export default function CustomerAcquisitionPage() {
                 </li>
               ))}
             </ul>
-            <p className="mt-10">
-              <Link
-                href="/compliance"
-                className="inline-flex items-center gap-1.5 font-semibold text-orange-400 transition-colors hover:text-orange-200"
-              >
-                Read our full compliance &amp; security commitments
-                <Icon name="arrowRight" className="h-4 w-4" />
-              </Link>
-            </p>
           </div>
         </Reveal>
       </Section>

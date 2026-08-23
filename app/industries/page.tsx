@@ -8,7 +8,7 @@ import { Icon, type IconName } from "@/components/icons";
 export const metadata: Metadata = {
   title: "Industries We Serve",
   description:
-    "Vertical expertise across health insurance (ACA & Medicare), solar, home services, auto insurance, and growth-stage SMBs, with compliance frameworks adapted to each sector.",
+    "Vertical expertise across health insurance (ACA & Medicare), solar, home services, auto insurance, and growth-stage SMBs, with delivery models adapted to each sector.",
 };
 
 type IndustryBlock = {
@@ -26,10 +26,10 @@ const blocks: IndustryBlock[] = [
     icon: "health",
     name: "Health Insurance",
     qualifier: "ACA & Medicare",
-    pain: "Acquiring qualified prospects compliantly during enrollment periods while managing high-volume transfer operations without compliance risk.",
+    pain: "Acquiring qualified prospects during enrollment periods while managing high-volume transfer operations.",
     services: [
       {
-        label: "Customer Acquisition & Contact Center Operations (TCPA-conscious, CMS-aware)",
+        label: "Customer Acquisition & Contact Center Operations",
         href: "/services/customer-acquisition",
       },
       { label: "Back-Office Support", href: "/services/back-office-support" },
@@ -95,10 +95,10 @@ export default function IndustriesPage() {
       <PageHero
         eyebrow="Industries we serve"
         title="Vertical expertise, adapted to your rules"
-        lede="Frontis Tech partners with businesses across regulated and non-regulated industries, adapting compliance frameworks and delivery models to the specific requirements of each sector."
+        lede="Frontis Communications partners with businesses across sectors, adapting delivery models to the specific requirements of each team."
       />
 
-      <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20" aria-label="Industries">
+      <section className="mx-auto max-w-7xl px-5 py-12 sm:px-8 sm:py-16" aria-label="Industries">
         <ul className="space-y-6">
           {blocks.map((b, i) => (
             <Reveal as="li" key={b.id} delay={Math.min(i, 2) * 60}>

@@ -10,7 +10,7 @@ import { Icon, type IconName } from "@/components/icons";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Frontis Tech LLC is a full-service operations and technology partner with US-based leadership and global delivery across calling, back-office, staffing, marketing, and software.",
+    "Frontis Communications is a communications and support partner with practical delivery across calling, back-office, staffing, marketing, and software.",
 };
 
 const values: { title: string; body: string }[] = [
@@ -19,8 +19,8 @@ const values: { title: string; body: string }[] = [
     body: "No hidden costs, no opaque structures. You see what you pay for and who does the work.",
   },
   {
-    title: "Compliance",
-    body: "Regulatory standards are a baseline, not a feature. We build to them before a campaign ever launches.",
+    title: "Growth",
+    body: "We build an environment where people can learn, take ownership, and move forward.",
   },
   {
     title: "Accountability",
@@ -35,13 +35,13 @@ const values: { title: string; body: string }[] = [
 const deliveryPoints: { icon: IconName; title: string; body: string }[] = [
   {
     icon: "mapPin",
-    title: "US-based client management",
-    body: "Your contract, account management, and escalation path are American, with clear communication in your time zone.",
+    title: "Clear communication",
+    body: "Your contract, account management, and escalation path are simple, direct, and easy to reach.",
   },
   {
     icon: "globe",
-    title: "Global operations team",
-    body: "Day-to-day execution runs on a global delivery team, keeping work moving around the clock at a cost structure that makes sense.",
+    title: "Flexible delivery team",
+    body: "Day-to-day execution is supported by a team that keeps work moving without unnecessary friction.",
   },
   {
     icon: "clipboardCheck",
@@ -55,8 +55,8 @@ export default function AboutPage() {
     <>
       <PageHero
         eyebrow="About us"
-        title="More than a vendor. An operations partner."
-        lede="Frontis Tech exists for a simple reason: managing a different specialist vendor for every need is a full-time job nobody wants."
+        title="More than a vendor. A communication partner."
+        lede="Frontis Communications exists for a simple reason: clear execution beats constant coordination."
       />
 
       {/* Leadership */}
@@ -76,7 +76,7 @@ export default function AboutPage() {
               />
               <Image
                 src="/team/aftab-hussain.jpg"
-                alt="Aftab Hussain, Founder and Managing Director of Frontis Tech"
+                alt="Aftab Hussain, Founder and Managing Director of Frontis Communications"
                 width={800}
                 height={1000}
                 className="relative rounded-3xl object-cover shadow-xl shadow-navy-900/10"
@@ -88,23 +88,23 @@ export default function AboutPage() {
               <h3 className="text-2xl font-semibold tracking-tight text-navy">
                 Aftab Hussain
               </h3>
-              <p className="mt-1 text-sm font-semibold tracking-[0.14em] text-orange-600 uppercase">
+                <p className="mt-1 text-sm font-semibold tracking-[0.14em] text-orange-600 uppercase">
                 Founder &amp; Managing Director
               </p>
               <div className="mt-5 space-y-4 text-lg leading-relaxed text-ink">
                 <p>
-                  Aftab leads Frontis Tech with a simple operating philosophy:
-                  understand what a business needs, be straight about whether we
-                  can help, and then make it happen. His background spans
-                  information technology and business operations, built on an
-                  engineering foundation.
+                  Aftab leads Frontis Communications with a simple operating
+                  philosophy: understand what a business needs, be straight
+                  about whether we can help, and then make it happen. His
+                  background spans information technology and business
+                  operations, built on an engineering foundation.
                 </p>
                 <p>
                   As a founder-operator, he has built and run the kind of delivery
-                  teams Frontis Tech now provides to its clients, which means the
-                  company is run by someone who has done the work, not just sold
-                  it. He is a familiar face at the industry&rsquo;s key events,
-                  including Medicarians, LeadsCon, and Collision.
+                  teams Frontis Communications now provides to its clients, which
+                  means the company is run by someone who has done the work, not
+                  just sold it. He is a familiar face at the industry&rsquo;s key
+                  events, including Medicarians, LeadsCon, and Collision.
                 </p>
               </div>
             </div>
@@ -118,7 +118,7 @@ export default function AboutPage() {
           <Reveal>
             <SectionHeading
               eyebrow="Our story"
-              title={<span id="our-story">Why Frontis Tech exists</span>}
+              title={<span id="our-story">Why Frontis Communications exists</span>}
             />
           </Reveal>
           <Reveal delay={100}>
@@ -133,7 +133,7 @@ export default function AboutPage() {
                 The traditional answer is a different vendor for each need, a
                 contract for each vendor, and a different version of the truth from
                 every one of them, with the client stuck in the middle doing the
-                coordination. Frontis Tech was founded to replace that arrangement
+                coordination. Frontis Communications was founded to replace that arrangement
                 with a single operations partner that scales across calling,
                 back-office, staffing, marketing, software, AI, and cloud.
               </p>

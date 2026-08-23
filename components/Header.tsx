@@ -12,7 +12,7 @@ const links = [
   { href: "/about", label: "About" },
   // Services rendered separately (dropdown)
   { href: "/industries", label: "Industries" },
-  { href: "/compliance", label: "Compliance" },
+  { href: "/careers", label: "Careers" },
 ];
 
 export default function Header() {
@@ -82,14 +82,14 @@ export default function Header() {
         Skip to content
       </a>
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-5 sm:px-8 lg:h-[4.5rem]">
-        <Link href="/" className="shrink-0" aria-label="Frontis Tech home">
+        <Link href="/" className="shrink-0" aria-label="Frontis Communications home">
           <Image
             src="/brand/logo-horizontal.png"
-            alt="Frontis Tech"
-            width={573}
-            height={96}
+            alt="Frontis Communications"
+            width={1943}
+            height={226}
             priority
-            className="h-8 w-auto lg:h-9"
+            className="h-7 w-auto sm:h-8 lg:h-9"
           />
         </Link>
 
@@ -162,7 +162,7 @@ export default function Header() {
           </div>
 
           {desktopLink("/industries", "Industries")}
-          {desktopLink("/compliance", "Compliance")}
+          {desktopLink("/careers", "Careers")}
         </nav>
 
         <div className="hidden lg:block">
