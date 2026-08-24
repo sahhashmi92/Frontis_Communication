@@ -30,6 +30,18 @@ export default function ContactPage() {
               <dl className="space-y-7">
                 <div>
                   <dt className="text-[0.8125rem] font-semibold tracking-[0.14em] text-navy-500 uppercase">
+                    Office
+                  </dt>
+                  <dd className="mt-2">
+                    <address className="leading-relaxed text-ink not-italic">
+                      {site.address.line1}
+                      <br />
+                      {site.address.line2}
+                    </address>
+                  </dd>
+                </div>
+                <div className="border-t border-line pt-7">
+                  <dt className="text-[0.8125rem] font-semibold tracking-[0.14em] text-navy-500 uppercase">
                     Phone
                   </dt>
                   <dd className="mt-2">

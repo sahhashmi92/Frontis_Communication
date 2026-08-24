@@ -6,6 +6,13 @@ export const site = {
   phone: "0313-9331429",
   email: "info@frontiscommunications.com",
   careersEmail: "hr@frontiscommunications.com",
+  address: {
+    line1: "Ground Floor, Sarfaraz Business and Technology Park",
+    line2: "Shamsabad, Rawalpindi",
+    full: "Ground Floor, Sarfaraz Business and Technology Park, Shamsabad, Rawalpindi",
+    locality: "Rawalpindi",
+    country: "PK",
+  },
   /**
    * Contact form backend: Google Apps Script web app bound to the
    * "Frontis Communications Website Leads" sheet. Each submission appends a row and

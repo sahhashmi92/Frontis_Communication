@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { services, site } from "@/lib/site";
+import { Icon } from "./icons";
 
 const companyLinks = [
   { href: "/about", label: "About Us" },
@@ -12,8 +13,8 @@ const companyLinks = [
 export default function Footer() {
   return (
     <footer className="border-t border-line bg-surface">
-      <div className="mx-auto max-w-7xl px-5 pt-14 pb-8 sm:px-8">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.1fr]">
+      <div className="mx-auto max-w-7xl px-5 pt-12 pb-7 sm:px-8">
+        <div className="grid gap-x-10 gap-y-9 md:grid-cols-2 lg:grid-cols-[1.25fr_1.55fr_0.85fr_1.15fr]">
           <div>
             <Link href="/" aria-label="Frontis Communications home">
               <Image
@@ -36,7 +37,7 @@ export default function Footer() {
 
           <nav aria-label="Services">
             <h2 className="text-sm font-semibold tracking-wide text-navy">Services</h2>
-            <ul className="mt-4 space-y-2.5">
+            <ul className="mt-4 grid gap-x-6 gap-y-2.5 sm:grid-cols-2">
               {services.map((s) => (
                 <li key={s.slug}>
                   <Link
@@ -77,6 +78,17 @@ export default function Footer() {
           <div>
             <h2 className="text-sm font-semibold tracking-wide text-navy">Get in touch</h2>
             <ul className="mt-4 space-y-2.5 text-sm text-muted">
+              <li className="flex items-start gap-2.5">
+                <Icon
+                  name="mapPin"
+                  className="mt-0.5 h-4 w-4 shrink-0 text-navy-400"
+                />
+                <address className="not-italic leading-relaxed">
+                  {site.address.line1}
+                  <br />
+                  {site.address.line2}
+                </address>
+              </li>
               <li>
                 <a
                   href={`tel:${site.phone}`}
@@ -105,7 +117,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-2 border-t border-line pt-6 text-[0.8125rem] text-muted sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-10 flex flex-col gap-2 border-t border-line pt-6 text-[0.8125rem] text-muted sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {new Date().getFullYear()} {site.name}. All rights reserved.
           </p>

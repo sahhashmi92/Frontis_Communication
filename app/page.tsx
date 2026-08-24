@@ -131,6 +131,13 @@ export default function HomePage() {
             url: site.url,
             logo: `${site.url}/brand/logo-horizontal.png`,
             email: site.email,
+            telephone: site.phone,
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: site.address.line1,
+              addressLocality: site.address.locality,
+              addressCountry: site.address.country,
+            },
             slogan: site.tagline,
             areaServed: "US",
           }),
