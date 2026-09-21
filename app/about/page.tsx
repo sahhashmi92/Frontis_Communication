@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import CtaBand from "@/components/CtaBand";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
@@ -67,22 +66,7 @@ export default function AboutPage() {
             title={<span id="leadership">Founder-led, operator-minded</span>}
           />
         </Reveal>
-        <div className="mt-10 grid items-center gap-10 lg:grid-cols-[1fr_1.6fr] lg:gap-16">
-          <Reveal>
-            <div className="relative mx-auto max-w-sm lg:max-w-none">
-              <div
-                className="absolute -top-4 -left-4 hidden h-24 w-24 rounded-full border-[3px] border-orange/60 sm:block"
-                aria-hidden="true"
-              />
-              <Image
-                src="/team/aftab-hussain.jpg"
-                alt="Aftab Hussain, Founder and Managing Director of Frontis Communications"
-                width={800}
-                height={1000}
-                className="relative rounded-3xl object-cover shadow-xl shadow-navy-900/10"
-              />
-            </div>
-          </Reveal>
+        <div className="mt-10 max-w-3xl">
           <Reveal delay={100}>
             <div>
               <h3 className="text-2xl font-semibold tracking-tight text-navy">
@@ -107,40 +91,6 @@ export default function AboutPage() {
                   events, including Medicarians, LeadsCon, and Collision.
                 </p>
               </div>
-            </div>
-          </Reveal>
-        </div>
-      </Section>
-
-      {/* Our story */}
-      <Section tint aria-labelledby="our-story">
-        <div className="grid gap-10 lg:grid-cols-[1fr_1.4fr] lg:gap-16">
-          <Reveal>
-            <SectionHeading
-              eyebrow="Our story"
-              title={<span id="our-story">Why Frontis Communications exists</span>}
-            />
-          </Reveal>
-          <Reveal delay={100}>
-            <div className="space-y-5 text-lg leading-relaxed text-ink">
-              <p>
-                Growth-focused businesses rarely have one problem. The company that
-                needs more qualified sales conversations usually also needs help with
-                the CRM those conversations land in, the staff to follow them up, the
-                marketing that feeds them, and the software that ties it all together.
-              </p>
-              <p>
-                The traditional answer is a different vendor for each need, a
-                contract for each vendor, and a different version of the truth from
-                every one of them, with the client stuck in the middle doing the
-                coordination. Frontis Communications was founded to replace that arrangement
-                with a single operations partner that scales across calling,
-                back-office, staffing, marketing, software, AI, and cloud.
-              </p>
-              <p>
-                One partner, one point of accountability, and connections that
-                convert.
-              </p>
             </div>
           </Reveal>
         </div>
