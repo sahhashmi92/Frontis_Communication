@@ -4,8 +4,8 @@ export const site = {
   tagline: "Communication That Connects",
   url: "https://frontiscommunications.com",
   phone: "0313-9331429",
-  email: "info@frontiscommunications.com",
-  careersEmail: "hr@frontiscommunications.com",
+  email: "grow@frontiscommunications.com",
+  careersEmail: "grow@frontiscommunications.com",
   address: {
     line1: "Ground Floor, Sarfaraz Business and Technology Park",
     line2: "Shamsabad, Rawalpindi",

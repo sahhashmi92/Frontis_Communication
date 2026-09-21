@@ -52,7 +52,7 @@ export default function ContactPage() {
                 </div>
                 <div className="border-t border-line pt-7">
                   <dt className="text-[0.8125rem] font-semibold tracking-[0.14em] text-navy-500 uppercase">
-                    General enquiries
+                    Email
                   </dt>
                   <dd className="mt-2 leading-relaxed text-muted">
                     <a
@@ -60,19 +60,6 @@ export default function ContactPage() {
                       className="font-medium text-navy underline-offset-4 hover:underline"
                     >
                       {site.email}
-                    </a>
-                  </dd>
-                </div>
-                <div className="border-t border-line pt-7">
-                  <dt className="text-[0.8125rem] font-semibold tracking-[0.14em] text-navy-500 uppercase">
-                    Careers
-                  </dt>
-                  <dd className="mt-2 leading-relaxed text-muted">
-                    <a
-                      href={`mailto:${site.careersEmail}`}
-                      className="font-medium text-navy underline-offset-4 hover:underline"
-                    >
-                      {site.careersEmail}
                     </a>
                   </dd>
                 </div>

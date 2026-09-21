@@ -105,14 +105,6 @@ export default function Footer() {
                   {site.email}
                 </a>
               </li>
-              <li>
-                <a
-                  href={`mailto:${site.careersEmail}`}
-                  className="font-medium text-navy-500 transition-colors hover:text-navy"
-                >
-                  {site.careersEmail}
-                </a>
-              </li>
             </ul>
           </div>
         </div>
