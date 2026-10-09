@@ -136,6 +136,8 @@ export default function HomePage() {
               "@type": "PostalAddress",
               streetAddress: site.address.line1,
               addressLocality: site.address.locality,
+              addressRegion: site.address.region,
+              postalCode: site.address.postalCode,
               addressCountry: site.address.country,
             },
             slogan: site.tagline,

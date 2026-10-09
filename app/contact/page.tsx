@@ -45,7 +45,7 @@ export default function ContactPage() {
                     Phone
                   </dt>
                   <dd className="mt-2">
-                    <a href={`tel:${site.phone}`} className="text-lg font-semibold text-navy underline-offset-4 hover:underline">
+                    <a href={`tel:${site.phone.replace(/[^\d+]/g, "")}`} className="text-lg font-semibold text-navy underline-offset-4 hover:underline">
                       {site.phone}
                     </a>
                   </dd>

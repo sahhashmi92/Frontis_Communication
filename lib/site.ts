@@ -3,15 +3,17 @@ export const site = {
   shortName: "Frontis Communications",
   tagline: "Communication That Connects",
   url: "https://frontiscommunications.com",
-  phone: "0313-9331429",
+  phone: "+92 335 9699659",
   email: "grow@frontiscommunications.com",
   careersEmail: "grow@frontiscommunications.com",
   address: {
-    line1: "Ground Floor, Sarfaraz Business and Technology Park",
-    line2: "Shamsabad, Rawalpindi",
-    full: "Ground Floor, Sarfaraz Business and Technology Park, Shamsabad, Rawalpindi",
-    locality: "Rawalpindi",
-    country: "PK",
+    line1: "7901 4th St N, STE 300",
+    line2: "St. Petersburg, FL 33702",
+    full: "7901 4th St N, STE 300, St. Petersburg, FL 33702",
+    locality: "St. Petersburg",
+    region: "FL",
+    postalCode: "33702",
+    country: "US",
   },
   /**
    * Contact form backend: Google Apps Script web app bound to the
