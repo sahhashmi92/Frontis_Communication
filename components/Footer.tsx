@@ -91,7 +91,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href={`tel:${site.phone}`}
+                  href={`tel:${site.phone.replace(/[^\d+]/g, "")}`}
                   className="font-medium text-navy-500 transition-colors hover:text-navy"
                 >
                   {site.phone}
